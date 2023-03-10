@@ -1,9 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html onclick="generatePuppy()">
 <head>
   <title>Random Puppy Generator</title>
 </head>
-<body>
+<style>
+  body {
+    background-color: #333;
+    color: #aaa;
+    max-height: 100vh;
+  }
+
+  * {
+    margin: 0;
+    user-select: none;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: calc(100vh - 4px);
+    object-fit: contain;
+  }
+
+  h1 {
+    position: absolute;
+    margin-top: 1rem;
+  }
+
+  .hide {
+    display: none;
+  }
+</style>
+<body onclick="generatePuppy()">
   <h1>Random Puppy Generator</h1>
 
   <img onclick="generatePuppy()" id="puppy-image" src="">
@@ -21,8 +48,10 @@
           const imageElement = document.getElementById("puppy-image");
           imageElement.src = imageUrl;
         });
+
+      const title = document.querySelector('h1');
+      title.classList.add('hide')
     }
-    generatePuppy();
   </script>
 </body>
 </html>
