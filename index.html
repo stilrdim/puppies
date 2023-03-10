@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Random Puppy Generator</title>
+    <style>
+      img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Random Puppy Generator</h1>
+    <button onclick="generatePuppy()">Generate Puppy</button>
+    <div id="puppy-container"></div>
+    <script>
+      function generatePuppy() {
+        // Generate a random number between 1 and 100
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        // Construct the image URL using the random number
+        const imageUrl = `https://www.puppy-picture-api.com/puppy-${randomNumber}.jpg`;
+        // Create an image element and set its src attribute to the generated URL
+        const imageElement = document.createElement("img");
+        imageElement.src = imageUrl;
+        // Add the image element to the puppy container div
+        const puppyContainer = document.getElementById("puppy-container");
+        puppyContainer.innerHTML = "";
+        puppyContainer.appendChild(imageElement);
+      }
+    </script>
+  </body>
+</html>
