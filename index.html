@@ -5,8 +5,8 @@
 </head>
 <body>
   <h1>Random Puppy Generator</h1>
-  <button onclick="generatePuppy()">Generate Puppy</button>
-  <img id="puppy-image" src="">
+
+  <img onclick="generatePuppy()" id="puppy-image" src="">
   <script>
     function generatePuppy() {
       // Construct the API URL
@@ -22,6 +22,7 @@
           imageElement.src = imageUrl;
         });
     }
+    generatePuppy();
   </script>
 </body>
 </html>
